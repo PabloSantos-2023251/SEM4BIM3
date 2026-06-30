@@ -24,10 +24,12 @@ export async function menu(): Promise<void> {
 
     switch (opcion.trim()) {
         case "1":
+            console.clear();
             console.log(JSON.stringify(listarUsuarios(), null, 2));
             break;
 
         case "2": {
+            console.clear();
             const id = await rl.question("Ingrese su id: ");
             const encontrado = buscarUsuario(Number(id));
             if (encontrado) {
@@ -39,6 +41,7 @@ export async function menu(): Promise<void> {
         }
 
         case "3": {
+            console.clear();
             const id = await rl.question("Ingrese el id: ");
             const nombre = await rl.question("Ingrese el nombre: ");
             const email = await rl.question("Ingrese el email: ");
@@ -49,6 +52,7 @@ export async function menu(): Promise<void> {
         }
 
         case "4": {
+            console.clear();
             const id = await rl.question("Ingrese el id: ");
             const nombre = await rl.question("Ingrese el nombre: ");
             const email = await rl.question("Ingrese el email: ");
@@ -60,12 +64,14 @@ export async function menu(): Promise<void> {
         }
 
         case "5": {
+            console.clear();
             const id = await rl.question("Ingrese el id del usuario a eliminar: ");
             borrarUsuario(Number(id));
             break;
         }
 
         case "6": {
+            console.clear();
             const id = await rl.question("Ingrese el id del usuario a editar: ");
             const existente = buscarUsuario(Number(id));
             
@@ -95,11 +101,13 @@ export async function menu(): Promise<void> {
         }
 
         case "7":
+            console.clear();
             console.log("Saliendo del sistema...");
             rl.close();
-            return;
+            return; 
 
         default:
+            console.clear();
             console.log("Opcion no disponible");
             break;
     }
